@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout 1</title>
+    <style>
+        body{
+            margin: 0;
+            
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        nav{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+            /* border: 1px solid blue; */
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+        }
+        nav>img{
+            width:100px;
+            padding-left: 50px;
+            
+        }
+        
+        .links{
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-right:50px;
+        }
+        .links>a{
+            text-decoration: none;
+            /* font-size: 1.5rem; */
+            font-weight: bold;
+            color: black;
+        }
+        .links>a:hover{
+            color:blue;
+            
+        }
+        .main{
+            /* margin-top: 10px; */
+            display: flex;
+            padding: 20px;
+        }
+
+
+
+
+
+        /* Left-content styling */
+        .main>.left-content{
+            width:100%;
+            padding:60px;
+        }
+        
+        .left-content>p{
+            color:gray;
+
+        }
+        #text{
+            text-transform: uppercase;
+            font-weight: 500;
+            color:rgb(106, 106, 199)
+        }
+        
+        /* Left sub content style  */
+        .left-sub-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .left-sub-content>video{
+            width:40%;
+        }
+        .left-sub-content> h3{
+            width:50%;
+        }
+
+
+
+        /* Right-content styling */
+        .right-content>div>img{
+            width:100px;
+            height: 100px;
+            /* border-radius: 50%; */
+        }
+        .right-content{
+            width:100%;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            /* flex-direction: row; */
+        }
+        .right-content>div{
+            width:40%;
+            padding:10px;
+            border-radius: 10px;
+            margin: 5px;
+        }
+        .right-content>div:hover{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+        }
+        .right-content>.right-sub-content>p{
+            color:gray;
+
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        
+        <img src="data:image/png;base64,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" alt="logo">
+        <div class="links">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Course</a>
+            <a href="">Instructor</a>
+            <a href="">Blog</a>
+            <a href="">Contact</a>
+        </div>
+
+    </nav>
+    <section class="main">
+        <div class="left-content">
+            <p id="text">Welcome to studylab</p>
+            <h1>We Are StudyLab An Online Learning
+                center
+            </h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
+                elit. Ut numquam minus officia sed iusto debitis?
+                 
+                  nesciunt minima.</p>
+        
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 
+                 
+                  velit quia sequi adipisci culpa nemo rem!</p>
+            <div class="left-sub-content">
+                <video src="" controls></video>
+                <h3>Learn anything from StudyLab, Watch video</h3>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="right-sub-content">
+                <img src="./quiz.png" alt="">
+                <h3>Lean Top Quality Content</h3>
+                <p>A small river named Duden flows by their place and supplies</p>
+            </div>
+            <div class="right-sub-content">
+                <img src="./quizzes.png" alt="">
+                <h3>Lean Top Quality ghfgm Content</h3>
+                <p>A small river named Duden flows by their place and supplies</p>
+            </div>
+            <div class="right-sub-content">
+                <img src="https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Book.png" alt="">
+                <h3>Lean Top Quality Content</h3>
+                <p>A small river named Duden flows by their place and supplies</p>
+            </div>
+            <div class="right-sub-content">
+                <img src="https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Book.png" alt="">
+                <h3>Lean Top Quality Content</h3>
+                <p>A small river named Duden flows by their place and supplies</p>
+            </div>
+        </div>
+    </section>
+   
+</body>
+</html>
